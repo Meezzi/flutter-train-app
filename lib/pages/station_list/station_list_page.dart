@@ -32,6 +32,9 @@ class StationListPage extends StatelessWidget {
               ),
             ),
           ),
+          Divider(
+            color: Colors.grey[300],
+          ),
         ],
       ),
     );
