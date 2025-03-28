@@ -12,6 +12,13 @@ class StationBox extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
       ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          boxText('출발역'),
+          boxText('도착역'),
+        ],
+      ),
     );
   }
 
