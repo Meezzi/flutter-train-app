@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_train_app/pages/widgets/station_box.dart';
+import 'package:flutter_train_app/pages/home/widgets/station_box.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
