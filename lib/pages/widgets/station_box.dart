@@ -8,6 +8,10 @@ class StationBox extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       height: 200,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+      ),
     );
   }
 }
