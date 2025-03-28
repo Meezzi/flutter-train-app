@@ -16,6 +16,13 @@ class StationBox extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           boxText('출발역'),
+          SizedBox(
+            height: 50,
+            child: VerticalDivider(
+              width: 2,
+              color: Colors.grey[400],
+            ),
+          ),
           boxText('도착역'),
         ],
       ),
