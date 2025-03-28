@@ -9,10 +9,13 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('기차 예매'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            StationBox(),
+          ],
         ),
       ),
       backgroundColor: Colors.grey[200],
