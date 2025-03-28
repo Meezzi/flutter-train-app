@@ -12,6 +12,9 @@ class StationListPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('$title'),
       ),
+      body: Column(children: [
+        for (final station in Station.values) StationItem(station.label),
+      ]),
     );
   }
 
