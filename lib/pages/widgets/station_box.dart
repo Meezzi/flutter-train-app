@@ -14,4 +14,24 @@ class StationBox extends StatelessWidget {
       ),
     );
   }
+
+  Widget boxText(String text) {
+    return GestureDetector(
+      onTap: () {},
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            text,
+            style: const TextStyle(
+                fontSize: 16, color: Colors.grey, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            '선택',
+            style: TextStyle(fontSize: 40),
+          ),
+        ],
+      ),
+    );
+  }
 }
