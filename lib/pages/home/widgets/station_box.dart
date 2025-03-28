@@ -34,7 +34,7 @@ class StationBox extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => StationListPage()));
+            MaterialPageRoute(builder: (context) => StationListPage(text)));
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
