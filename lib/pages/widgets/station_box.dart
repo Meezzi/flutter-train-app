@@ -7,6 +7,7 @@ class StationBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
+      height: 200,
     );
   }
 }
