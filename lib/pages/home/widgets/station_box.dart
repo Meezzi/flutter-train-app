@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_train_app/pages/station_list/station_list_page.dart';
 
 class StationBox extends StatelessWidget {
   const StationBox({super.key});
@@ -15,7 +16,7 @@ class StationBox extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          boxText('출발역'),
+          boxText('출발역', context),
           SizedBox(
             height: 50,
             child: VerticalDivider(
@@ -23,15 +24,18 @@ class StationBox extends StatelessWidget {
               color: Colors.grey[400],
             ),
           ),
-          boxText('도착역'),
+          boxText('도착역', context),
         ],
       ),
     );
   }
 
-  Widget boxText(String text) {
+  Widget boxText(String text, context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => StationListPage()));
+      },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
