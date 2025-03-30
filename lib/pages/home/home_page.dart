@@ -15,6 +15,12 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             StationBox(),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                '좌석 선택',
+              ),
+            ),
           ],
         ),
       ),
