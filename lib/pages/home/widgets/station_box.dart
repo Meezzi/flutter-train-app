@@ -39,6 +39,7 @@ class _StationBoxState extends State<StationBox> {
     String title,
     BuildContext context,
     String? station,
+    Function(String) onSelected,
   ) {
     return GestureDetector(
       onTap: () async {
@@ -46,6 +47,10 @@ class _StationBoxState extends State<StationBox> {
           context,
           MaterialPageRoute(builder: (context) => StationListPage(title)),
         );
+
+        if (result != null) {
+          onSelected(result);
+        }
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
