@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_train_app/pages/station_list/station_list_page.dart';
 
-class StationBox extends StatelessWidget {
+class StationBox extends StatefulWidget {
   const StationBox({super.key});
 
+  @override
+  State<StationBox> createState() => _StationBoxState();
+}
+
+class _StationBoxState extends State<StationBox> {
   @override
   Widget build(BuildContext context) {
     return Container(
