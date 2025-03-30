@@ -35,17 +35,22 @@ class _StationBoxState extends State<StationBox> {
     );
   }
 
-  Widget boxText(String text, context) {
+  Widget boxText(
+    String title,
+    BuildContext context,
+  ) {
     return GestureDetector(
       onTap: () async {
-        final station = await Navigator.push(context,
-            MaterialPageRoute(builder: (context) => StationListPage(text)));
+        final station = await Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => StationListPage(title)),
+        );
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            text,
+            title,
             style: const TextStyle(
                 fontSize: 16, color: Colors.grey, fontWeight: FontWeight.bold),
           ),
