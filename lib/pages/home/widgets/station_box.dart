@@ -9,6 +9,9 @@ class StationBox extends StatefulWidget {
 }
 
 class _StationBoxState extends State<StationBox> {
+  String? _arrival;
+  String? _departure;
+
   @override
   Widget build(BuildContext context) {
     return Container(
