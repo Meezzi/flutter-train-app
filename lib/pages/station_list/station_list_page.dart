@@ -13,32 +13,36 @@ class StationListPage extends StatelessWidget {
         title: Text('$title'),
       ),
       body: Column(children: [
-        for (final station in Station.values) StationItem(station.label),
+        for (final station in Station.values)
+          StationItem(station.label, context),
       ]),
     );
   }
 
-  Widget StationItem(String station) {
-    return SizedBox(
-      height: 50,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              station,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+  Widget StationItem(String station, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pop(context, station);
+      },
+      child: SizedBox(
+        height: 50,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                station,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          Divider(
-            color: Colors.grey[300],
-          ),
-        ],
+            Divider(color: Colors.grey[300]),
+          ],
+        ),
       ),
     );
   }

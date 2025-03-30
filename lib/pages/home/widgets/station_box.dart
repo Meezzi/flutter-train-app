@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_train_app/pages/station_list/station_list_page.dart';
 
-class StationBox extends StatelessWidget {
+class StationBox extends StatefulWidget {
   const StationBox({super.key});
+
+  @override
+  State<StationBox> createState() => _StationBoxState();
+}
+
+class _StationBoxState extends State<StationBox> {
+  String? _arrival;
+  String? _departure;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +24,11 @@ class StationBox extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          boxText('출발역', context),
+          boxText('출발역', context, _arrival, (station) {
+            setState(() {
+              _arrival = station;
+            });
+          }),
           SizedBox(
             height: 50,
             child: VerticalDivider(
@@ -24,28 +36,46 @@ class StationBox extends StatelessWidget {
               color: Colors.grey[400],
             ),
           ),
-          boxText('도착역', context),
+          boxText('도착역', context, _departure, (station) {
+            setState(() {
+              _departure = station;
+            });
+          }),
         ],
       ),
     );
   }
 
-  Widget boxText(String text, context) {
+  Widget boxText(
+    String title,
+    BuildContext context,
+    String? station,
+    Function(String) onSelected,
+  ) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => StationListPage(text)));
+      onTap: () async {
+        final result = await Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => StationListPage(title)),
+        );
+
+        if (result != null) {
+          onSelected(result);
+        }
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            text,
+            title,
             style: const TextStyle(
-                fontSize: 16, color: Colors.grey, fontWeight: FontWeight.bold),
+              fontSize: 16,
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           Text(
-            '선택',
+            station ?? '선택',
             style: TextStyle(fontSize: 40),
           ),
         ],
