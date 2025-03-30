@@ -38,10 +38,11 @@ class _StationBoxState extends State<StationBox> {
   Widget boxText(
     String title,
     BuildContext context,
+    String? station,
   ) {
     return GestureDetector(
       onTap: () async {
-        final station = await Navigator.push(
+        final result = await Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => StationListPage(title)),
         );
@@ -52,10 +53,13 @@ class _StationBoxState extends State<StationBox> {
           Text(
             title,
             style: const TextStyle(
-                fontSize: 16, color: Colors.grey, fontWeight: FontWeight.bold),
+              fontSize: 16,
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           Text(
-            '선택',
+            station ?? '선택',
             style: TextStyle(fontSize: 40),
           ),
         ],
