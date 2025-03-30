@@ -32,8 +32,8 @@ class StationBox extends StatelessWidget {
 
   Widget boxText(String text, context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(context,
+      onTap: () async {
+        final station = await Navigator.push(context,
             MaterialPageRoute(builder: (context) => StationListPage(text)));
       },
       child: Column(
