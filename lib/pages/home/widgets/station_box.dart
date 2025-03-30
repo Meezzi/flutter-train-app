@@ -24,7 +24,11 @@ class _StationBoxState extends State<StationBox> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          boxText('출발역', context),
+          boxText('출발역', context, _arrival, (station) {
+            setState(() {
+              _arrival = station;
+            });
+          }),
           SizedBox(
             height: 50,
             child: VerticalDivider(
