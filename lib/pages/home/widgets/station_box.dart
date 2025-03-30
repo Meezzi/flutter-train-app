@@ -36,7 +36,11 @@ class _StationBoxState extends State<StationBox> {
               color: Colors.grey[400],
             ),
           ),
-          boxText('도착역', context),
+          boxText('도착역', context, _departure, (station) {
+            setState(() {
+              _departure = station;
+            });
+          }),
         ],
       ),
     );
