@@ -17,6 +17,14 @@ class _HomePageState extends State<HomePage> {
     return _arrival != null && _departure != null;
   }
 
+  void _onStationSelected(String station, bool isArrival) {
+    setState(() {
+      if (isArrival) {
+        _arrival = station;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
