@@ -55,8 +55,23 @@ class _SeatPageState extends State<SeatPage> {
                   onPressed: (row != null && col != null)
                       ? () {
                           showCupertinoDialog(
-                              context: context,
-                              builder: (context) => CupertinoAlertDialog());
+                            context: context,
+                            builder: (context) => CupertinoAlertDialog(
+                              title: Column(
+                                children: [
+                                  Text(
+                                    '예매 하시겠습니까?',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    '좌석 : $col-$row',
+                                    style: TextStyle(fontSize: 12),
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
                         }
                       : null,
                   style: ElevatedButton.styleFrom(
