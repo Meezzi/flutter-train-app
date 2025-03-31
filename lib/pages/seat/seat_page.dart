@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SeatPage extends StatefulWidget {
@@ -51,7 +52,13 @@ class _SeatPageState extends State<SeatPage> {
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: (row != null && col != null)
+                      ? () {
+                          showCupertinoDialog(
+                              context: context,
+                              builder: (context) => CupertinoAlertDialog());
+                        }
+                      : null,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.purple,
                     shape: RoundedRectangleBorder(
