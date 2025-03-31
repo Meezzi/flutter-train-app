@@ -14,7 +14,16 @@ class SeatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('좌석 선택')),
-      body: Row(
+      body: Column(
+        children: [
+          stationHeader(),
+        ],
+      ),
+    );
+  }
+
+  Widget stationHeader() {
+    return Row(
         children: [
           Expanded(
             child: Row(
@@ -37,7 +46,6 @@ class SeatPage extends StatelessWidget {
             ),
           ),
         ],
-      ),
     );
   }
 
