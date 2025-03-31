@@ -68,6 +68,7 @@ class _SeatPageState extends State<SeatPage> {
                   )),
             ),
           ),
+          SizedBox(height: 20)
         ],
       ),
     );
