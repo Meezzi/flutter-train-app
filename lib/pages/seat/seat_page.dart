@@ -82,6 +82,12 @@ class _SeatPageState extends State<SeatPage> {
                                     ),
                                   ),
                                 ),
+                                CupertinoDialogAction(
+                                  child: Text(
+                                    '확인',
+                                    style: TextStyle(color: Colors.blue),
+                                  ),
+                                ),
                               ],
                             ),
                           );
