@@ -185,7 +185,12 @@ class _SeatPageState extends State<SeatPage> {
 
   Widget seatBox(String label, int index) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        setState(() {
+          row = label;
+          col = index;
+        });
+      },
       child: Container(
         height: 50,
         width: 50,
