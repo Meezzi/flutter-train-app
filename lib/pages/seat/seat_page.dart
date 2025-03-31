@@ -1,8 +1,62 @@
 import 'package:flutter/material.dart';
 
 class SeatPage extends StatelessWidget {
+  final String arrival;
+  final String departure;
+
+  const SeatPage({
+    super.key,
+    required this.arrival,
+    required this.departure,
+  });
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(title: Text('좌석 선택')),
+      body: Column(
+        children: [
+          stationHeader(),
+        ],
+      ),
+    );
+  }
+
+  Widget stationHeader() {
+    return Row(
+        children: [
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                stationTitle(arrival),
+              ],
+            ),
+          ),
+          Icon(
+            Icons.arrow_circle_right_outlined,
+            size: 30,
+          ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                stationTitle(departure),
+              ],
+            ),
+          ),
+        ],
+    );
+  }
+
+  Widget stationTitle(String station) {
+    return Text(
+      station,
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Colors.purple,
+        fontSize: 30,
+      ),
+    );
   }
 }
