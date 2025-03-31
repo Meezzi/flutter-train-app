@@ -38,7 +38,11 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            StationBox(),
+            StationBox(
+              departure: _departure,
+              arrival: _arrival,
+              onSelected: _onStationSelected,
+            ),
             SizedBox(height: 20),
             SizedBox(
               width: double.infinity,
