@@ -17,6 +17,8 @@ class SeatPage extends StatelessWidget {
       body: Column(
         children: [
           stationHeader(),
+          SizedBox(height: 8),
+          seatLabel(),
         ],
       ),
     );
@@ -24,28 +26,39 @@ class SeatPage extends StatelessWidget {
 
   Widget stationHeader() {
     return Row(
-        children: [
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                stationTitle(arrival),
-              ],
-            ),
+      children: [
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              stationTitle(arrival),
+            ],
           ),
-          Icon(
-            Icons.arrow_circle_right_outlined,
-            size: 30,
+        ),
+        Icon(
+          Icons.arrow_circle_right_outlined,
+          size: 30,
+        ),
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              stationTitle(departure),
+            ],
           ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                stationTitle(departure),
-              ],
-            ),
-          ),
-        ],
+        ),
+      ],
+    );
+  }
+
+  Widget seatLabel() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        labelBox(Colors.purple, '선택됨'),
+        SizedBox(width: 20),
+        labelBox(Colors.grey[300]!, '선택안됨'),
+      ],
     );
   }
 
