@@ -51,9 +51,14 @@ class _SeatPageState extends State<SeatPage> {
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
-                child: Text('예매 하기'),
-              ),
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purple,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: Text('예매 하기')),
             ),
           ),
         ],
