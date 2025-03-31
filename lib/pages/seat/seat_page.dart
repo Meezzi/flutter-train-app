@@ -89,4 +89,46 @@ class SeatPage extends StatelessWidget {
       ],
     );
   }
+
+  Widget seatNumber() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SizedBox(
+          width: 50,
+          height: 50,
+          child: seatText('A'),
+        ),
+        SizedBox(width: 4),
+        SizedBox(
+          width: 50,
+          height: 50,
+          child: seatText('B'),
+        ),
+        SizedBox(width: 4),
+        SizedBox(width: 50, height: 50),
+        SizedBox(width: 4),
+        SizedBox(
+          width: 50,
+          height: 50,
+          child: seatText('C'),
+        ),
+        SizedBox(width: 4),
+        SizedBox(
+          width: 50,
+          height: 50,
+          child: seatText('D'),
+        ),
+      ],
+    );
+  }
+
+  Widget seatText(String text) {
+    return Center(
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 18),
+      ),
+    );
+  }
 }
