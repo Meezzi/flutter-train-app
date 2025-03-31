@@ -15,6 +15,9 @@ class SeatPage extends StatefulWidget {
 }
 
 class _SeatPageState extends State<SeatPage> {
+  String? row;
+  int? col;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
