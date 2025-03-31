@@ -161,9 +161,9 @@ class _SeatPageState extends State<SeatPage> {
 
   Widget seatBoxRow(int index) {
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      seatBox(),
+      seatBox('A', index),
       SizedBox(width: 4),
-      seatBox(),
+      seatBox('B', index),
       SizedBox(width: 4),
       SizedBox(
         width: 50,
@@ -176,9 +176,9 @@ class _SeatPageState extends State<SeatPage> {
         ),
       ),
       SizedBox(width: 4),
-      seatBox(),
+      seatBox('C', index),
       SizedBox(width: 4),
-      seatBox(),
+      seatBox('D', index),
       SizedBox(width: 4),
     ]);
   }
