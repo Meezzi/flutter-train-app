@@ -70,6 +70,16 @@ class _SeatPageState extends State<SeatPage> {
                                   )
                                 ],
                               ),
+                              actions: [
+                                CupertinoDialogAction(
+                                  child: Text(
+                                    '취소',
+                                    style: TextStyle(
+                                      color: Colors.red,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           );
                         }
