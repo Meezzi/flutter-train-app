@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SeatPage extends StatelessWidget {
+class SeatPage extends StatefulWidget {
   final String arrival;
   final String departure;
 
@@ -10,6 +10,11 @@ class SeatPage extends StatelessWidget {
     required this.departure,
   });
 
+  @override
+  State<SeatPage> createState() => _SeatPageState();
+}
+
+class _SeatPageState extends State<SeatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +55,7 @@ class SeatPage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              stationTitle(arrival),
+              stationTitle(widget.arrival),
             ],
           ),
         ),
@@ -62,7 +67,7 @@ class SeatPage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              stationTitle(departure),
+              stationTitle(widget.departure),
             ],
           ),
         ),
