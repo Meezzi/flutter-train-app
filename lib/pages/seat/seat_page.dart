@@ -72,6 +72,9 @@ class _SeatPageState extends State<SeatPage> {
                               ),
                               actions: [
                                 CupertinoDialogAction(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
                                   child: Text(
                                     '취소',
                                     style: TextStyle(
