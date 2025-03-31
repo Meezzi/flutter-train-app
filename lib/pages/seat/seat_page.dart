@@ -5,4 +5,15 @@ class SeatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold();
   }
+
+  Widget stationTitle(String station) {
+    return Text(
+      station,
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Colors.purple,
+        fontSize: 30,
+      ),
+    );
+  }
 }
