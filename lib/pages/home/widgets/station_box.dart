@@ -44,7 +44,7 @@ class StationBox extends StatelessWidget {
     String title,
     BuildContext context,
     String? station,
-    Function(String) onSelected,
+    bool isDeparture,
   ) {
     return GestureDetector(
       onTap: () async {
@@ -54,7 +54,7 @@ class StationBox extends StatelessWidget {
         );
 
         if (result != null) {
-          onSelected(result);
+          onSelected(result, isDeparture);
         }
       },
       child: Column(
