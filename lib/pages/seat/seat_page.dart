@@ -13,14 +13,29 @@ class SeatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('좌석 선택')),
-        body: Row(
-          children: [
-            stationTitle(arrival),
-            Icon(Icons.arrow_circle_right_outlined),
-            stationTitle(departure),
-          ],
-        ));
+      appBar: AppBar(title: Text('좌석 선택')),
+      body: Row(
+        children: [
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                stationTitle(arrival),
+              ],
+            ),
+          ),
+          Icon(Icons.arrow_circle_right_outlined),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                stationTitle(departure),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget stationTitle(String station) {
