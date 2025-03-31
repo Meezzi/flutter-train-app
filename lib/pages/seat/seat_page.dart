@@ -132,6 +132,30 @@ class SeatPage extends StatelessWidget {
     );
   }
 
+  Widget seatBoxRow(int index) {
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      seatBox(),
+      SizedBox(width: 4),
+      seatBox(),
+      SizedBox(width: 4),
+      SizedBox(
+        width: 50,
+        height: 50,
+        child: Center(
+          child: Text(
+            index.toString(),
+            style: TextStyle(fontSize: 18),
+          ),
+        ),
+      ),
+      SizedBox(width: 4),
+      seatBox(),
+      SizedBox(width: 4),
+      seatBox(),
+      SizedBox(width: 4),
+    ]);
+  }
+
   Widget seatBox() {
     return Container(
       height: 50,
