@@ -47,14 +47,16 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SeatPage(),
-                    ),
-                  );
-                },
+                onPressed: isButtonEnabled()
+                    ? () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SeatPage(),
+                          ),
+                        );
+                      }
+                    : null,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple,
                   shape: RoundedRectangleBorder(
