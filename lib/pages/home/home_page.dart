@@ -21,6 +21,8 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       if (isArrival) {
         _arrival = station;
+      } else {
+        _departure = station;
       }
     });
   }
