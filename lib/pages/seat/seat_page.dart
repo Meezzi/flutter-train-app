@@ -17,6 +17,7 @@ class SeatPage extends StatelessWidget {
         body: Row(
           children: [
             stationTitle(arrival),
+            Icon(Icons.arrow_circle_right_outlined),
             stationTitle(departure),
           ],
         ));
