@@ -19,6 +19,8 @@ class SeatPage extends StatelessWidget {
           stationHeader(),
           SizedBox(height: 8),
           seatLabel(),
+          SizedBox(height: 8),
+          seatNumber(),
         ],
       ),
     );
