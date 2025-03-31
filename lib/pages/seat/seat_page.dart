@@ -21,6 +21,9 @@ class SeatPage extends StatelessWidget {
           seatLabel(),
           SizedBox(height: 8),
           seatNumber(),
+          Expanded(
+            child: SingleChildScrollView(),
+          )
         ],
       ),
     );
