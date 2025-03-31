@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_train_app/pages/station_list/station_list_page.dart';
 
-class StationBox extends StatefulWidget {
-  const StationBox({super.key});
+class StationBox extends StatelessWidget {
+  final String? arrival;
+  final String? departure;
 
-  @override
-  State<StationBox> createState() => _StationBoxState();
-}
+  final Function(String station, bool isDeparture) onSelected;
 
-class _StationBoxState extends State<StationBox> {
-  String? _arrival;
-  String? _departure;
+  const StationBox({
+    super.key,
+    required this.arrival,
+    required this.departure,
+    required this.onSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +26,7 @@ class _StationBoxState extends State<StationBox> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          boxText('출발역', context, _arrival, (station) {
-            setState(() {
-              _arrival = station;
-            });
-          }),
+          boxText('출발역', context, arrival, true),
           SizedBox(
             height: 50,
             child: VerticalDivider(
@@ -36,11 +34,7 @@ class _StationBoxState extends State<StationBox> {
               color: Colors.grey[400],
             ),
           ),
-          boxText('도착역', context, _departure, (station) {
-            setState(() {
-              _departure = station;
-            });
-          }),
+          boxText('도착역', context, departure, false),
         ],
       ),
     );
@@ -50,7 +44,7 @@ class _StationBoxState extends State<StationBox> {
     String title,
     BuildContext context,
     String? station,
-    Function(String) onSelected,
+    bool isDeparture,
   ) {
     return GestureDetector(
       onTap: () async {
@@ -60,7 +54,7 @@ class _StationBoxState extends State<StationBox> {
         );
 
         if (result != null) {
-          onSelected(result);
+          onSelected(result, isDeparture);
         }
       },
       child: Column(
