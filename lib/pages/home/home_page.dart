@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_train_app/pages/home/widgets/station_box.dart';
 import 'package:flutter_train_app/pages/seat/seat_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
