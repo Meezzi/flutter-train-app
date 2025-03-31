@@ -24,7 +24,10 @@ class SeatPage extends StatelessWidget {
               ],
             ),
           ),
-          Icon(Icons.arrow_circle_right_outlined),
+          Icon(
+            Icons.arrow_circle_right_outlined,
+            size: 30,
+          ),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
