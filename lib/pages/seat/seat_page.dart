@@ -59,4 +59,21 @@ class SeatPage extends StatelessWidget {
       ),
     );
   }
+
+  Widget labelBox(Color boxColor, String labelText) {
+    return Row(
+      children: [
+        Container(
+          height: 24,
+          width: 24,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            color: boxColor,
+          ),
+        ),
+        SizedBox(width: 4),
+        Text(labelText),
+      ],
+    );
+  }
 }
