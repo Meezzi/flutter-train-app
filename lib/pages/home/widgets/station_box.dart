@@ -5,10 +5,13 @@ class StationBox extends StatelessWidget {
   final String? arrival;
   final String? departure;
 
+  final Function(String station, bool isDeparture) onSelected;
+
   const StationBox({
     super.key,
     required this.arrival,
     required this.departure,
+    required this.onSelected,
   });
 
   @override
