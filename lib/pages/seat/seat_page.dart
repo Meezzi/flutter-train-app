@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
 class SeatPage extends StatelessWidget {
+  final String arrival;
+  final String departure;
+
+  const SeatPage({
+    super.key,
+    required this.arrival,
+    required this.departure,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Scaffold();
