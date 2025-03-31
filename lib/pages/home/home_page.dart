@@ -10,9 +10,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   String? _arrival;
   String? _departure;
+
+  bool isButtonEnabled() {
+    return _arrival != null && _departure != null;
+  }
 
   @override
   Widget build(BuildContext context) {
