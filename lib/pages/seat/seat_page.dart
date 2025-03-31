@@ -195,7 +195,10 @@ class _SeatPageState extends State<SeatPage> {
         height: 50,
         width: 50,
         decoration: BoxDecoration(
-            color: Colors.grey[300], borderRadius: BorderRadius.circular(8)),
+            color: (row == label && col == index)
+                ? Colors.purple
+                : Colors.grey[300],
+            borderRadius: BorderRadius.circular(8)),
       ),
     );
   }
