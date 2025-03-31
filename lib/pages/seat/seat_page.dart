@@ -22,7 +22,21 @@ class SeatPage extends StatelessWidget {
           SizedBox(height: 8),
           seatNumber(),
           Expanded(
-            child: SingleChildScrollView(),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  ...List.generate(
+                    20,
+                    (index) => Column(
+                      children: [
+                        seatBoxRow(index + 1),
+                        SizedBox(height: 8),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           )
         ],
       ),
