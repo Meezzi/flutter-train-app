@@ -58,7 +58,14 @@ class _SeatPageState extends State<SeatPage> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  child: Text('예매 하기')),
+                  child: Text(
+                    '예매 하기',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                  )),
             ),
           ),
         ],
