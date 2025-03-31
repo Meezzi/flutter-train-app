@@ -131,4 +131,13 @@ class SeatPage extends StatelessWidget {
       ),
     );
   }
+
+  Widget seatBox() {
+    return Container(
+      height: 50,
+      width: 50,
+      decoration: BoxDecoration(
+          color: Colors.grey[300], borderRadius: BorderRadius.circular(8)),
+    );
+  }
 }
