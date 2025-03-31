@@ -45,7 +45,17 @@ class _SeatPageState extends State<SeatPage> {
                 ],
               ),
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text('예매 하기'),
+              ),
+            ),
+          ),
         ],
       ),
     );
