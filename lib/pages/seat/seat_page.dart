@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_train_app/pages/seat/widgets/station_header.dart';
 
 class SeatPage extends StatefulWidget {
   final String arrival;
@@ -25,7 +26,7 @@ class _SeatPageState extends State<SeatPage> {
       appBar: AppBar(title: Text('좌석 선택')),
       body: Column(
         children: [
-          stationHeader(),
+          StationHeader(arrival: widget.arrival, departure: widget.departure),
           SizedBox(height: 8),
           seatLabel(),
           SizedBox(height: 8),
@@ -119,33 +120,6 @@ class _SeatPageState extends State<SeatPage> {
     );
   }
 
-  Widget stationHeader() {
-    return Row(
-      children: [
-        Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              stationTitle(widget.arrival),
-            ],
-          ),
-        ),
-        Icon(
-          Icons.arrow_circle_right_outlined,
-          size: 30,
-        ),
-        Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              stationTitle(widget.departure),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
   Widget seatLabel() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -154,17 +128,6 @@ class _SeatPageState extends State<SeatPage> {
         SizedBox(width: 20),
         labelBox(Colors.grey[300]!, '선택안됨'),
       ],
-    );
-  }
-
-  Widget stationTitle(String station) {
-    return Text(
-      station,
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        color: Colors.purple,
-        fontSize: 30,
-      ),
     );
   }
 
