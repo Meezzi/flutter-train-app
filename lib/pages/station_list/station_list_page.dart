@@ -3,8 +3,9 @@ import 'package:flutter_train_app/data/station.dart';
 
 class StationListPage extends StatelessWidget {
   final String title;
+  String? selectedStation;
 
-  StationListPage(this.title);
+  StationListPage(this.title, this.selectedStation);
 
   @override
   Widget build(BuildContext context) {
