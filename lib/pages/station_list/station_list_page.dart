@@ -23,6 +23,7 @@ class StationListPage extends StatelessWidget {
   Widget StationItem(String station, BuildContext context) {
     return GestureDetector(
       onTap: () {
+        selectedStation = station;
         Navigator.pop(context, station);
       },
       child: SizedBox(
