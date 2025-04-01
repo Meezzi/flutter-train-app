@@ -28,7 +28,7 @@ class StationBox extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          boxText('출발역', context, arrival, true),
+          boxText('출발역', context, arrival, selectedStation, true),
           SizedBox(
             height: 50,
             child: VerticalDivider(
@@ -36,7 +36,7 @@ class StationBox extends StatelessWidget {
               color: Theme.of(context).dividerColor,
             ),
           ),
-          boxText('도착역', context, departure, false),
+          boxText('도착역', context, departure, selectedStation, false),
         ],
       ),
     );
@@ -46,13 +46,19 @@ class StationBox extends StatelessWidget {
     String title,
     BuildContext context,
     String? station,
+    String? selectedStation,
     bool isDeparture,
   ) {
     return GestureDetector(
       onTap: () async {
         final result = await Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => StationListPage(title)),
+          MaterialPageRoute(
+            builder: (context) => StationListPage(
+              title,
+              selectedStation,
+            ),
+          ),
         );
 
         if (result != null) {
