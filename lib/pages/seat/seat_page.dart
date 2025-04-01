@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_train_app/pages/seat/widgets/seat_label.dart';
+import 'package:flutter_train_app/pages/seat/widgets/seat_number.dart';
 import 'package:flutter_train_app/pages/seat/widgets/station_header.dart';
 
 class SeatPage extends StatefulWidget {
@@ -31,7 +32,7 @@ class _SeatPageState extends State<SeatPage> {
           SizedBox(height: 8),
           const SeatLabel(),
           SizedBox(height: 8),
-          seatNumber(),
+          const SeatNumber(),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
@@ -117,48 +118,6 @@ class _SeatPageState extends State<SeatPage> {
           ),
           SizedBox(height: 20)
         ],
-      ),
-    );
-  }
-
-  Widget seatNumber() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SizedBox(
-          width: 50,
-          height: 50,
-          child: seatText('A'),
-        ),
-        SizedBox(width: 4),
-        SizedBox(
-          width: 50,
-          height: 50,
-          child: seatText('B'),
-        ),
-        SizedBox(width: 4),
-        SizedBox(width: 50, height: 50),
-        SizedBox(width: 4),
-        SizedBox(
-          width: 50,
-          height: 50,
-          child: seatText('C'),
-        ),
-        SizedBox(width: 4),
-        SizedBox(
-          width: 50,
-          height: 50,
-          child: seatText('D'),
-        ),
-      ],
-    );
-  }
-
-  Widget seatText(String text) {
-    return Center(
-      child: Text(
-        text,
-        style: TextStyle(fontSize: 18),
       ),
     );
   }
