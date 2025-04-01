@@ -9,12 +9,16 @@ class StationListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final filteredStations = Station.values
+        .where((station) => station.label != selectedStation)
+        .toList();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('$title'),
       ),
       body: Column(children: [
-        for (final station in Station.values)
+        for (final station in filteredStations)
           StationItem(station.label, context),
       ]),
     );
