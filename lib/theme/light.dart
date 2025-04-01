@@ -7,6 +7,7 @@ final lightTheme = ThemeData(
     primaryContainer: Colors.grey[300],
     secondaryContainer: Colors.white,
   ),
+  dividerColor: Colors.grey[400],
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       foregroundColor: Colors.white,

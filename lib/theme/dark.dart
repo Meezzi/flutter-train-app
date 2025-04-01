@@ -7,6 +7,7 @@ final darkTheme = ThemeData(
     primaryContainer: Colors.black,
     secondaryContainer: Colors.grey[700],
   ),
+  dividerColor: Colors.grey[100],
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       foregroundColor: Colors.white,
