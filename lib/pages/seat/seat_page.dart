@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_train_app/pages/seat/widgets/seat_label.dart';
 import 'package:flutter_train_app/pages/seat/widgets/station_header.dart';
 
 class SeatPage extends StatefulWidget {
@@ -28,7 +29,7 @@ class _SeatPageState extends State<SeatPage> {
         children: [
           StationHeader(arrival: widget.arrival, departure: widget.departure),
           SizedBox(height: 8),
-          seatLabel(),
+          const SeatLabel(),
           SizedBox(height: 8),
           seatNumber(),
           Expanded(
@@ -117,34 +118,6 @@ class _SeatPageState extends State<SeatPage> {
           SizedBox(height: 20)
         ],
       ),
-    );
-  }
-
-  Widget seatLabel() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        labelBox(Colors.purple, '선택됨'),
-        SizedBox(width: 20),
-        labelBox(Colors.grey[300]!, '선택안됨'),
-      ],
-    );
-  }
-
-  Widget labelBox(Color boxColor, String labelText) {
-    return Row(
-      children: [
-        Container(
-          height: 24,
-          width: 24,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: boxColor,
-          ),
-        ),
-        SizedBox(width: 4),
-        Text(labelText),
-      ],
     );
   }
 
