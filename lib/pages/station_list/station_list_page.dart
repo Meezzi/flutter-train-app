@@ -3,17 +3,22 @@ import 'package:flutter_train_app/data/station.dart';
 
 class StationListPage extends StatelessWidget {
   final String title;
+  String? selectedStation;
 
-  StationListPage(this.title);
+  StationListPage(this.title, this.selectedStation);
 
   @override
   Widget build(BuildContext context) {
+    final filteredStations = Station.values
+        .where((station) => station.label != selectedStation)
+        .toList();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('$title'),
       ),
       body: Column(children: [
-        for (final station in Station.values)
+        for (final station in filteredStations)
           StationItem(station.label, context),
       ]),
     );
@@ -22,6 +27,7 @@ class StationListPage extends StatelessWidget {
   Widget StationItem(String station, BuildContext context) {
     return GestureDetector(
       onTap: () {
+        selectedStation = station;
         Navigator.pop(context, station);
       },
       child: SizedBox(
