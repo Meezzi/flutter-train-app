@@ -11,6 +11,11 @@ final lightTheme = ThemeData(
     style: ElevatedButton.styleFrom(
       foregroundColor: Colors.white,
       backgroundColor: Colors.purple,
+      textStyle: TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        fontSize: 18,
+      ),
     ),
   ),
 );
