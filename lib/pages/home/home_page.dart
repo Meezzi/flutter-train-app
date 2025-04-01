@@ -33,52 +33,42 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('기차 예매'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            StationBox(
-              departure: _departure,
-              arrival: _arrival,
-              onSelected: _onStationSelected,
-            ),
-            SizedBox(height: 20),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: isButtonEnabled()
-                    ? () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SeatPage(
-                              arrival: _arrival!,
-                              departure: _departure!,
+      body: Container(
+        color: Theme.of(context).colorScheme.primaryContainer,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              StationBox(
+                departure: _departure,
+                arrival: _arrival,
+                onSelected: _onStationSelected,
+              ),
+              SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: isButtonEnabled()
+                      ? () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SeatPage(
+                                arrival: _arrival!,
+                                departure: _departure!,
+                              ),
                             ),
-                          ),
-                        );
-                      }
-                    : null,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.purple,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-                child: Text(
-                  '좌석 선택',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold),
+                          );
+                        }
+                      : null,
+                  child: Text('좌석 선택'),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-      backgroundColor: Colors.grey[200],
     );
   }
 }

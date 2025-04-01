@@ -20,7 +20,7 @@ class StationBox extends StatelessWidget {
       alignment: Alignment.center,
       height: 200,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.secondaryContainer,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -31,7 +31,7 @@ class StationBox extends StatelessWidget {
             height: 50,
             child: VerticalDivider(
               width: 2,
-              color: Colors.grey[400],
+              color: Theme.of(context).dividerColor,
             ),
           ),
           boxText('도착역', context, departure, false),

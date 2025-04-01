@@ -40,7 +40,7 @@ class StationListPage extends StatelessWidget {
                 ),
               ),
             ),
-            Divider(color: Colors.grey[300]),
+            Divider(color: Theme.of(context).dividerColor),
           ],
         ),
       ),
