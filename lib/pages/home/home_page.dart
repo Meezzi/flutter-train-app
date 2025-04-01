@@ -68,10 +68,6 @@ class _HomePageState extends State<HomePage> {
                 ),
                 child: Text(
                   '좌석 선택',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold),
                 ),
               ),
             ),
