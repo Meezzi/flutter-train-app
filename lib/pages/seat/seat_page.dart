@@ -30,6 +30,37 @@ class _SeatPageState extends State<SeatPage> {
     });
   }
 
+  void _showDialog() {
+    showCupertinoDialog(
+      context: context,
+      builder: (context) => CupertinoAlertDialog(
+        title: Column(
+          children: [
+            const Text('예매 하시겠습니까?',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            Text(
+              '좌석 : $col-$row',
+              style: const TextStyle(fontSize: 12),
+            )
+          ],
+        ),
+        actions: [
+          CupertinoDialogAction(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('취소', style: TextStyle(color: Colors.red)),
+          ),
+          CupertinoDialogAction(
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.pop(context);
+            },
+            child: const Text('확인', style: TextStyle(color: Colors.blue)),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,51 +95,7 @@ class _SeatPageState extends State<SeatPage> {
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: (row != null && col != null)
-                      ? () {
-                          showCupertinoDialog(
-                            context: context,
-                            builder: (context) => CupertinoAlertDialog(
-                              title: Column(
-                                children: [
-                                  Text(
-                                    '예매 하시겠습니까?',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                  Text(
-                                    '좌석 : $col-$row',
-                                    style: TextStyle(fontSize: 12),
-                                  )
-                                ],
-                              ),
-                              actions: [
-                                CupertinoDialogAction(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text(
-                                    '취소',
-                                    style: TextStyle(
-                                      color: Colors.red,
-                                    ),
-                                  ),
-                                ),
-                                CupertinoDialogAction(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text(
-                                    '확인',
-                                    style: TextStyle(color: Colors.blue),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                        }
-                      : null,
+                  onPressed: (row != null && col != null) ? _showDialog : null,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.purple,
                     shape: RoundedRectangleBorder(
