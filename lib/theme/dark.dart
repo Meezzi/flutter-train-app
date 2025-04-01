@@ -5,5 +5,6 @@ final darkTheme = ThemeData(
     seedColor: Colors.purple,
     brightness: Brightness.dark,
     primaryContainer: Colors.black,
+    secondaryContainer: Colors.grey[700],
   ),
 );
