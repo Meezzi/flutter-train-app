@@ -16,6 +16,9 @@ final lightTheme = ThemeData(
         fontWeight: FontWeight.bold,
         fontSize: 18,
       ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
     ),
   ),
 );
