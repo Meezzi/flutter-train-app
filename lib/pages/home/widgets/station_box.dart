@@ -20,7 +20,7 @@ class StationBox extends StatelessWidget {
       alignment: Alignment.center,
       height: 200,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.secondaryContainer,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
