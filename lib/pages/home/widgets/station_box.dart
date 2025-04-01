@@ -16,6 +16,8 @@ class StationBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String? selectedStation = (arrival != null) ? arrival : departure;
+
     return Container(
       alignment: Alignment.center,
       height: 200,
