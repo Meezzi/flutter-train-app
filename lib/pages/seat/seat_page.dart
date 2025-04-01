@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_train_app/pages/seat/widgets/seat_box_row.dart';
 import 'package:flutter_train_app/pages/seat/widgets/seat_label.dart';
 import 'package:flutter_train_app/pages/seat/widgets/seat_number.dart';
 import 'package:flutter_train_app/pages/seat/widgets/station_header.dart';
@@ -22,6 +23,13 @@ class _SeatPageState extends State<SeatPage> {
   String? row;
   int? col;
 
+  void onSeatSelected(String selectedRow, int selectedCol) {
+    setState(() {
+      row = selectedRow;
+      col = selectedCol;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,17 +44,18 @@ class _SeatPageState extends State<SeatPage> {
           Expanded(
             child: SingleChildScrollView(
               child: Column(
-                children: [
-                  ...List.generate(
-                    20,
-                    (index) => Column(
-                      children: [
-                        seatBoxRow(index + 1),
-                        SizedBox(height: 8),
-                      ],
+                children: List.generate(
+                  20,
+                  (index) => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: SeatRow(
+                      rowIndex: index + 1,
+                      selectedRow: row,
+                      selectedCol: col,
+                      onSeatSelected: onSeatSelected,
                     ),
                   ),
-                ],
+                ),
               ),
             ),
           ),
@@ -118,50 +127,6 @@ class _SeatPageState extends State<SeatPage> {
           ),
           SizedBox(height: 20)
         ],
-      ),
-    );
-  }
-
-  Widget seatBoxRow(int index) {
-    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      seatBox('A', index),
-      SizedBox(width: 4),
-      seatBox('B', index),
-      SizedBox(width: 4),
-      SizedBox(
-        width: 50,
-        height: 50,
-        child: Center(
-          child: Text(
-            index.toString(),
-            style: TextStyle(fontSize: 18),
-          ),
-        ),
-      ),
-      SizedBox(width: 4),
-      seatBox('C', index),
-      SizedBox(width: 4),
-      seatBox('D', index),
-      SizedBox(width: 4),
-    ]);
-  }
-
-  Widget seatBox(String label, int index) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          row = label;
-          col = index;
-        });
-      },
-      child: Container(
-        height: 50,
-        width: 50,
-        decoration: BoxDecoration(
-            color: (row == label && col == index)
-                ? Colors.purple
-                : Colors.grey[300],
-            borderRadius: BorderRadius.circular(8)),
       ),
     );
   }
