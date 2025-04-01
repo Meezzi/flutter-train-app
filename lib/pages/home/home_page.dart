@@ -27,6 +27,18 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void _navigatorToSeatPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => SeatPage(
+          arrival: _arrival!,
+          departure: _departure!,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,17 +62,7 @@ class _HomePageState extends State<HomePage> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: isButtonEnabled()
-                      ? () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SeatPage(
-                                arrival: _arrival!,
-                                departure: _departure!,
-                              ),
-                            ),
-                          );
-                        }
+                      ? () => _navigatorToSeatPage(context)
                       : null,
                   child: Text('좌석 선택'),
                 ),
