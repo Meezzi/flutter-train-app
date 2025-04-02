@@ -49,38 +49,40 @@ class StationBox extends StatelessWidget {
     String? selectedStation,
     bool isDeparture,
   ) {
-    return GestureDetector(
-      onTap: () async {
-        final result = await Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => StationListPage(
+    return Expanded(
+      child: GestureDetector(
+        onTap: () async {
+          final result = await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => StationListPage(
+                title,
+                selectedStation,
+              ),
+            ),
+          );
+      
+          if (result != null) {
+            onSelected(result, isDeparture);
+          }
+        },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
               title,
-              selectedStation,
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-        );
-
-        if (result != null) {
-          onSelected(result, isDeparture);
-        }
-      },
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.grey,
-              fontWeight: FontWeight.bold,
+            Text(
+              station ?? '선택',
+              style: TextStyle(fontSize: 40),
             ),
-          ),
-          Text(
-            station ?? '선택',
-            style: TextStyle(fontSize: 40),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
